@@ -1,4 +1,5 @@
 # Error Wrapper
+![](https://travis-ci.org/daniel-androvideo/error_wrapper.svg?branch=master)
 
 > error wrapper for golang
 
