@@ -43,3 +43,35 @@ func TestTaskFailWillInterruptExecute(t *testing.T) {
 		t.Error("expected error")
 	}
 }
+
+func TestTaskOnErrorExecuteWhenTaskReturnError(t *testing.T) {
+	w := error_wrapper.ErrorWrapper{}
+	count := 0
+	w.Do(func() error {
+		count++
+		return nil
+	}).OnError(func(err error) {
+		t.Error("shouldn't execute")
+	}).Do(func() error {
+		count++
+		return errors.New("hello")
+	}).OnError(func(err error) {
+		t.Log("should execute")
+	})
+}
+
+func TestTaskOnErrorWillCatchError(t *testing.T) {
+	w := error_wrapper.ErrorWrapper{}
+	count := 0
+	w.Do(func() error {
+		count++
+		return errors.New("hello")
+	}).OnError(func(err error) {
+		t.Log("should execute")
+	}).Do(func() error {
+		count++
+		return errors.New("hello2")
+	}).OnError(func(err error) {
+		t.Error("shouldn't execute")
+	})
+}
