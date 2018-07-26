@@ -1,7 +1,7 @@
 package error_wrapper_test
 
 import (
-	"github.com/daniel-androvideo/error_wrapper"
+	"github.com/androvideo-dev/error_wrapper"
 
 	"errors"
 	"testing"

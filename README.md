@@ -1,12 +1,11 @@
 # Error Wrapper
-![](https://travis-ci.org/daniel-androvideo/error_wrapper.svg?branch=master)
 
 > error wrapper for golang
 
 ## Install
 
 ```bash
-go get -u github.com/daniel-androvideo/error_wrapper
+go get -u github.com/androvideo-dev/error_wrapper
 ```
 
 ## How to use
@@ -15,7 +14,7 @@ go get -u github.com/daniel-androvideo/error_wrapper
 package main
 
 import (
-	"github.com/daniel-androvideo/error_wrapper"
+	"github.com/androvideo-dev/error_wrapper"
 
 	"errors"
 	"fmt"
